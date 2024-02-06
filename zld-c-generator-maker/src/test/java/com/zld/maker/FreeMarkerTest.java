@@ -1,4 +1,4 @@
-package com.zld;
+package com.zld.maker;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

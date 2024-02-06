@@ -1,5 +1,4 @@
-package com.zld.cli.example;
-import cn.hutool.core.io.IoUtil;
+package com.zld.maker.cli.example;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

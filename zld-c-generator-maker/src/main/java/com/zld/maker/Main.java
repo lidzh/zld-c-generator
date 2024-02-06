@@ -1,6 +1,6 @@
-package com.zld;
+package com.zld.maker;
 
-import com.zld.cli.example.CommandExecutor;
+import com.zld.maker.cli.example.CommandExecutor;
 
 /**
  * @author zhenglidong

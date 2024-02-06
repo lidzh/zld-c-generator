@@ -1,18 +1,17 @@
-package com.zld.generator;
+package com.zld.maker.generator.file;
 
 import cn.hutool.core.io.FileUtil;
-import com.zld.model.MainTemplateConfig;
+import com.zld.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
 /**
  * 核心生成器
  */
-public class MainGenerator {
+public class FileGenerator {
 
     /**
      * 生成
@@ -30,21 +29,14 @@ public class MainGenerator {
         String inputPath = new File(parentFile, "zld-c-generator-demo-projects/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
         List<File> files = FileUtil.loopFiles(projectPath);
         files.forEach(file -> System.out.println(file.getAbsolutePath()));
         // 生成动态文件
         String inputDynamicFilePath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
 //        String inputDynamicFilePath = projectPath + File.separator + "classes/templates/MainTemplate.java.ftl";
         String outputDynamicFilePath = outputPath + File.separator + "acm-template/src/com/zld/acm/MainTemplate.java";
-        DynamicGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
+        DynamicFileGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
     }
 
-    public static void main(String[] args) throws TemplateException, IOException {
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("zld");
-        mainTemplateConfig.setLoop(false);
-        mainTemplateConfig.setOutputText("求和结果：");
-        doGenerate(mainTemplateConfig);
-    }
 }

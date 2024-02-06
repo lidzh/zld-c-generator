@@ -1,7 +1,5 @@
-package com.zld.cli.example;
+package com.zld.maker.cli.example;
 
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
 import picocli.CommandLine;
 
 /**

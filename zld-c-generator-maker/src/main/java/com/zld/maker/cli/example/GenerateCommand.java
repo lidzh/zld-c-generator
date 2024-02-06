@@ -1,8 +1,8 @@
-package com.zld.cli.example;
+package com.zld.maker.cli.example;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.zld.generator.MainGenerator;
-import com.zld.model.MainTemplateConfig;
+import com.zld.maker.generator.file.FileGenerator;
+import com.zld.maker.model.DataModel;
 import lombok.Data;
 import picocli.CommandLine;
 
@@ -29,10 +29,10 @@ public class GenerateCommand implements Callable {
 
     @Override
     public Object call() throws Exception {
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
+        DataModel mainTemplateConfig = new DataModel();
         BeanUtil.copyProperties(this, mainTemplateConfig);
         System.out.println("配置信息:" + mainTemplateConfig);
-        MainGenerator.doGenerate(mainTemplateConfig);
+        FileGenerator.doGenerate(mainTemplateConfig);
         return null;
     }
 }

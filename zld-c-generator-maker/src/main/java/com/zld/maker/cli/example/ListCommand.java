@@ -1,4 +1,4 @@
-package com.zld.cli.example;
+package com.zld.maker.cli.example;
 
 import cn.hutool.core.io.FileUtil;
 import picocli.CommandLine;

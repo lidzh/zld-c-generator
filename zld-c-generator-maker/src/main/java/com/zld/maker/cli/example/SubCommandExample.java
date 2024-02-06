@@ -1,4 +1,4 @@
-package com.zld.cli.example;
+package com.zld.maker.cli.example;
 
 
 import picocli.CommandLine;
