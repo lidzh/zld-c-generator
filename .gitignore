@@ -1,7 +1,7 @@
 # My customs
 .idea
 target
-zld-c-generator.iml
+*.iml
 
 
 ### Java template
